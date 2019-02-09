@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+/* Paralex scrolling */
+.parallex {
+  background-image: url('lockwood_using_equipment.jpg');
+  height: 90%; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+/* end Paralex scrolling */
+
+/* Beginning of heading video */
+.fullscreen {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.fullscreen_video {
+    min-width: 100%;
+    overflow: hidden;
+    z-index: -1;
+    height: 800px;
+}
+
+.video_overlay_text {
+    position: absolute;
+    text-align: center;
+    font-size: 4em;
+    z-index: 9999;
+    color: white;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+/* End of heading video */
+
+
+/* Timeline */
+html, body {
+    background-color: #222C32;
+    height: 100%;
+}
+
+.cd-container {
+  width: 90%;
+  max-width: 1080px;
+  margin: 0 auto;
+  background: #2B343A;
+  padding: 0 10%;
+  border-radius: 2px;
+}
+.cd-container::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+#cd-timeline {
+  position: relative;
+  padding: 2em 0;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+#cd-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 25px;
+  height: 100%;
+  width: 4px;
+  background: #7E57C2;
+}
+@media only screen and (min-width: 1170px) {
+  #cd-timeline {
+    margin-top: 3em;
+    margin-bottom: 3em;
+  }
+  #cd-timeline::before {
+    left: 50%;
+    margin-left: -2px;
+  }
+}
+
+.cd-timeline-block {
+  position: relative;
+  margin: 2em 0;
+}
+.cd-timeline-block:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.cd-timeline-block:first-child {
+  margin-top: 0;
+}
+.cd-timeline-block:last-child {
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 1170px) {
+  .cd-timeline-block {
+    margin: 4em 0;
+  }
+  .cd-timeline-block:first-child {
+    margin-top: 0;
+  }
+  .cd-timeline-block:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.cd-timeline-img {
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px #7E57C2, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+}
+.cd-timeline-img {
+  background: #673AB7;
+}
+@media only screen and (min-width: 1170px) {
+  .cd-timeline-img {
+    width: 30px;
+    height: 30px;
+    left: 50%;
+    margin-left: -15px;
+    margin-top: 15px;
+    /* Force Hardware Acceleration in WebKit */
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+  }
+}
+
+.cd-timeline-content {
+  position: relative;
+  margin-left: 60px;
+  margin-right: 30px;
+  background: #333C42;
+  border-radius: 2px;
+  padding: 1em;
+  .timeline-content-info {
+    background: #2B343A;
+    padding: 5px 10px;
+    color: rgba(255,255,255,0.7);
+    font-size: 12px;
+    box-shadow:  inset 0 2px 0 rgba(0, 0, 0, 0.08);
+    border-radius: 2px;
+    i {
+      margin-right: 5px;
+    }
+    .timeline-content-info-title, .timeline-content-info-date {  
+      width: calc(50% - 2px);
+      display: inline-block;
+    }
+    @media (max-width: 500px) {
+      .timeline-content-info-title, .timeline-content-info-date {  
+        display: block;
+        width:100%;
+      } 
+    }
+  }
+}
+.cd-timeline-content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.cd-timeline-content h2 {
+  color: rgba(255,255,255,.9);
+  margin-top:0;
+  margin-bottom: 5px;
+}
+.cd-timeline-content p, .cd-timeline-content .cd-date {
+  color: rgba(255,255,255,.7);
+  font-size: 13px;
+  font-size: 0.8125rem;
+}
+.cd-timeline-content .cd-date {
+  display: inline-block;
+}
+.cd-timeline-content p {
+  margin: 1em 0;
+  line-height: 1.6;
+}
+
+.cd-timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 16px;
+  right: 100%;
+  height: 0;
+  width: 0;
+  border: 7px solid transparent;
+  border-right: 7px solid #333C42;
+}
+
+@media only screen and (min-width: 768px) {
+  .cd-timeline-content h2 {
+    font-size: 20px;
+    font-size: 1.25rem;
+  }
+  .cd-timeline-content p {
+    font-size: 16px;
+    font-size: 1rem;
+  }
+  .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
+    font-size: 14px;
+    font-size: 0.875rem;
+  }
+}
+@media only screen and (min-width: 1170px) {
+  .cd-timeline-content {
+    color: white;
+    margin-left: 0;
+    padding: 1.6em;
+    width: 36%;
+    margin: 0 5%
+  }
+  .cd-timeline-content::before {
+    top: 24px;
+    left: 100%;
+    border-color: transparent;
+    border-left-color: #333C42;
+  }
+  .cd-timeline-content .cd-date {
+    position: absolute;
+    width: 100%;
+    left: 122%;
+    top: 6px;
+    font-size: 16px;
+    font-size: 1rem;
+  }
+  .cd-timeline-block:nth-child(even) .cd-timeline-content {
+    float: right;
+  }
+  .cd-timeline-block:nth-child(even) .cd-timeline-content::before {
+    top: 24px;
+    left: auto;
+    right: 100%;
+    border-color: transparent;
+    border-right-color: #333C42;
+  }
+  .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-read-more {
+    float: right;
+  }
+  .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-date {
+    left: auto;
+    right: 122%;
+    text-align: right;
+  }
+}
+/* End of timeline*/
+
+
+/* Slideshow */
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+  background-color: #939190;
+}
+
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+  background-color: #939190;
+}
+
+/* On hover add a black background */
+.prev:hover, .next:hover {
+  background-color: #000;
+}
+
+/* Caption text */
+.text {
+  color: #000;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  text-align: center;
+  background-color: #939190;
+}
+.text:hover {
+  background-color: #000;
+  transition: background-color 0.6s ease;
+  color: white;
+}
+
+/* Number text */
+.numbertext {
+  color: #000;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #000;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+/* End of slideshown */
+
+/* Menu Bar */
+.menu-bar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.menu-bar a {
+  float: left;
+  width: 20%;
+  text-align: center;
+  padding: 26px 0;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 36px;
+}
+
+.menu-bar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #7E57C2
+}
+
+/* End Menu Bar */
+
+</style>
+
+<title> Personal Life </title>
+</head>
+
+<body style = "text-align: center;">
+
+
+<!-- Menu Bar -->
+<div class="menu-bar">
+  <a href="#" class = "active"> Home </a> 
+  <a href="#"> Personal Life </a> 
+  <a href="#"> Achievments </a> 
+  <a href="#"> Context </a>
+  <a href="#"> Legacy </a> 
+</div>
+<!-- end Menu Bar -->
+
+<!-- Heading video -->
+<div class = "fullscreen">
+  <div class = "video_overlay_text">
+    <p style = "color: white; font-size: 100px"> Personal Life </p>
+  </div>
+  <video loop muted autoplay poster="img/videoframe.jpg" class = "fullscreen_video">
+    <source src="Background_08.mp4" type="video/mp4">
+  </video>
+</div>
+<!-- End Heading video -->
+
+<!-- Parallex -->
+<div class="parallex"> </div>
+
+
+<!-- This is the personal life timeline -->
+<div style = "height: 100px; font-size: 26px; color: white"> 
+  <h1 class = "center"> <a name = "early_life" > Early Life </a> </h1>
+</div>  
+
+<section id="cd-timeline" class="cd-container">
+    <div class="cd-timeline-block">
+      <div class="cd-timeline-img cd-picture">
+      </div>
+
+      <div class="cd-timeline-content">
+        <h2 id = "early_life">Birth</h2>
+        <div class="timeline-content-info">
+        December 29, 1899
+        </div>
+        <p> Marian Lockwood was born on Dec 29 1899 in an unknown location.</p>
+      </div> 
+    </div> 
+
+    <div class="cd-timeline-block">
+      <div class="cd-timeline-img cd-movie">
+      </div> 
+
+      <div class="cd-timeline-content">
+        <h2> Education </h2>
+        Date
+        <p> She attended Wellesley College, and though she never graduated, it was where she became interested in astronomy.</p>
+      </div> 
+    </div> 
+
+    <div class="cd-timeline-block">
+      <div class="cd-timeline-img cd-picture">
+      </div> 
+
+      <div class="cd-timeline-content">
+        <h2>Schooling</h2>
+        Date
+        <p>Some Information.</p>
+      </div> 
+    </div>
+  </section> 
+<!-- End of early life timeline -->
+
+
+<!-- Slideshow HTML -->
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 5</div>
+  <img src="staff_of_hayden_planetarium.jpg" style="width:100%">
+  <div class="text">Staff of the Hayden Planetarium, front row, left to right: Marian Lockwood, Dr. Clyde Fisher, William H. Barton, Dorothy A. Bennet; rear row: Charles Federer and Arthur Draper, September, 1936</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 5</div>
+  <img src="marian_lockwood_group.jpg" style="width:100%">
+  <div class="text">Assistant Curator Marian Lockwood with group of children in the Copernican Planetarium, Hayden Planetarium, 1940</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 5</div>
+  <img src="staff_of_planetarium.jpg" style="width:100%">
+  <div class="text">Staff of Planetarium lecturers, left to right: Clyde Fisher, Dorothy A. Bennett, Arthur L. Draper, Marion Lockwood, and William H. Barton, Jr., October 1, 1935</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">4 / 5</div>
+  <img src="staff_of_planetarium_lecturers.jpg" style="width:100%">
+  <div class="text">Staff of Planetarium lecturers, left to right: Clyde Fisher, Dorothy A. Bennett, William H. Barton, Jr., Marion Lockwood, and Arthur L. Draper, October 1, 1935</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">5 / 5</div>
+  <img src="lockwood_using_equipment.jpg" style="width:100%">
+  <div class="text">Astronomer Marian Lockwood at the control panel, Hayden Planetarium, July 1943</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center; color: #1234">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span> 
+  <span class="dot" onclick="currentSlide(5)"></span> 
+  <span class="dot" onclick="currentSlide(6)"></span>
+</div>
+<!-- End slideshow HTML -->
+
+
+<!-- Footer video and form -->
+<div class = "fullscreen">
+  <div class = "video_overlay_text"> </div>
+  <video loop muted autoplay poster="img/videoframe.jpg" class = "fullscreen_video">
+    <source src="Background_08.mp4" type="video/mp4">
+  </video>
+</div>
+<!-- End of Footer video and form -->
+
+
+<!-- Beginning Javascript for slideshow -->
+<script>
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+<!-- End Javascript for slideshow -->
+
+</body>
+</html>
+
+
