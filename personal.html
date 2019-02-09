@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type = "text/css">
+
+<title> Personal Life </title>
+</head>
+
+<body style = "text-align: center;">
+
+
+<!-- Menu Bar -->
+<div class="menu-bar">
+  <a href="#" class = "active"> Home </a> 
+  <a href="#"> Personal Life </a> 
+  <a href="#"> Achievements</a> 
+  <a href="#"> Context </a>
+  <a href="#"> Legacy </a> 
+</div>
+<!-- end Menu Bar -->
+
+<!-- Heading video -->
+<div class = "fullscreen">
+  <div class = "video_overlay_text">
+    <p style = "color: white; font-size: 100px"> Personal Life </p>
+  </div>
+  <video loop muted autoplay poster="img/videoframe.jpg" class = "fullscreen_video">
+    <source src="Background_08.mp4" type="video/mp4">
+  </video>
+</div>
+<!-- End Heading video -->
+
+<!-- Parallex -->
+<div class="parallex"> </div>
+
+
+<!-- This is the personal life timeline -->
+<div style = "height: 100px; font-size: 26px; color: white"> 
+  <h1 class = "center"> <a name = "early_life" > Early Life </a> </h1>
+</div>  
+
+<section id="cd-timeline" class="cd-container">
+    <div class="cd-timeline-block">
+      <div class="cd-timeline-img cd-picture">
+      </div>
+
+      <div class="cd-timeline-content">
+        <h2 id = "early_life">Birth</h2>
+        <div class="timeline-content-info">
+        December 29, 1899
+        </div>
+        <p> Marian Lockwood was born on Dec 29 1899 in an unknown location.</p>
+      </div> 
+    </div> 
+
+    <div class="cd-timeline-block">
+      <div class="cd-timeline-img cd-movie">
+      </div> 
+
+      <div class="cd-timeline-content">
+        <h2> Education </h2>
+        Date
+        <p> She attended Wellesley College, and though she never graduated, it was where she became interested in astronomy.</p>
+      </div> 
+    </div> 
+
+    <div class="cd-timeline-block">
+      <div class="cd-timeline-img cd-picture">
+      </div> 
+
+      <div class="cd-timeline-content">
+        <h2>Schooling</h2>
+        Date
+        <p>Some Information.</p>
+      </div> 
+    </div>
+  </section> 
+<!-- End of early life timeline -->
+
+
+<!-- Slideshow HTML -->
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 5</div>
+  <img src="staff_of_hayden_planetarium.jpg" style="width:100%">
+  <div class="text">Staff of the Hayden Planetarium, front row, left to right: Marian Lockwood, Dr. Clyde Fisher, William H. Barton, Dorothy A. Bennet; rear row: Charles Federer and Arthur Draper, September, 1936</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 5</div>
+  <img src="marian_lockwood_group.jpg" style="width:100%">
+  <div class="text">Assistant Curator Marian Lockwood with group of children in the Copernican Planetarium, Hayden Planetarium, 1940</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 5</div>
+  <img src="staff_of_planetarium.jpg" style="width:100%">
+  <div class="text">Staff of Planetarium lecturers, left to right: Clyde Fisher, Dorothy A. Bennett, Arthur L. Draper, Marion Lockwood, and William H. Barton, Jr., October 1, 1935</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">4 / 5</div>
+  <img src="staff_of_planetarium_lecturers.jpg" style="width:100%">
+  <div class="text">Staff of Planetarium lecturers, left to right: Clyde Fisher, Dorothy A. Bennett, William H. Barton, Jr., Marion Lockwood, and Arthur L. Draper, October 1, 1935</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">5 / 5</div>
+  <img src="lockwood_using_equipment.jpg" style="width:100%">
+  <div class="text">Astronomer Marian Lockwood at the control panel, Hayden Planetarium, July 1943</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center; color: #1234">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span> 
+  <span class="dot" onclick="currentSlide(5)"></span> 
+</div>
+<!-- End slideshow HTML -->
+
+
+<!-- Footer video and form -->
+<div class = "fullscreen">
+  <div class = "video_overlay_text"> </div>
+  <video loop muted autoplay poster="img/videoframe.jpg" class = "fullscreen_video">
+    <source src="Background_08.mp4" type="video/mp4">
+  </video>
+</div>
+<!-- End of Footer video and form -->
+
+
+<!-- Beginning Javascript for slideshow -->
+<script>
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+<!-- End Javascript for slideshow -->
+
+</body>
+</html>
+
+
