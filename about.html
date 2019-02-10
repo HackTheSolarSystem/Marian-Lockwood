@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Roboto:300');
+</style>
+<link rel = "stylesheet" href = "style.css" type = "text/css"> 
+</head>
+<body >
+
+<div class="menu-bar">
+  <a href="./homepage.html" class = "active"> Home </a> 
+  <a href="./personal.html"> Personal Life </a> 
+  <a href="./work.html"> Achievements</a> 
+  <a href="context.html"> Context </a>
+  <a href="./Marian-Lockwood.html"> Legacy </a>
+  <div class="dropdown">
+    <a href="#" onclick="myFunction()" class="dropbtn"> More </a> 
+    <div id="myDropdown" class="dropdown-content">
+      <a href="./about.html">About us</a>
+      <a href="./Marian_Lockwood_Quiz.html">Lockwood Quiz</a>
+      <a href="./quiz.html">Space Quiz</a>
+    </div>
+  </div>
+</div>
+<!-- Heading video -->
+<div class = "fullscreen">
+  <div class = "video_overlay_text">
+    <p style = "color: white; font-size: 100px"> About Us </p>
+  </div>
+  <video loop muted autoplay poster="img/videoframe.jpg" class = "fullscreen_video">
+    <source src="supernova.mp4" type="video/mp4">
+  </video>
+</div>
+<!-- End Heading video -->
+
+
+<style>
+.parallax2 {
+  background-image: url('our_photo.jpg_large');
+  height: 90%; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+</style>
+<div class="parallax2"> </div>
+
+<section >
+  <div class="block" >
+    <h2> The BridgeUp: STEM Brown Scholars Team</h2>
+      <p>
+        We're a group of 5 from different schools under the Brown Scholars program at AMNH. We coded this website to let others know about significant women in science, specifically at AMNH. 
+      </p>
+      
+  </div> 
+</section> 
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+</body>
+</html>
+
+
+
+

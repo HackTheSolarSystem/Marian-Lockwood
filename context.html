@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html>
+<head> 
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Roboto:300');
+</style>
+<link rel = "stylesheet" href = "style.css" type = "text/css"> 
+</head>
+<body >
+
+<div class="menu-bar">
+  <a href="./homepage.html" class = "active"> Home </a> 
+  <a href="./personal.html"> Personal Life </a> 
+  <a href="./work.html"> Achievements</a> 
+  <a href="context.html"> Context </a>
+  <a href="./Marian-Lockwood.html"> Legacy </a>
+  <div class="dropdown">
+    <a href="#" onclick="myFunction()" class="dropbtn"> More </a> 
+    <div id="myDropdown" class="dropdown-content">
+      <a href="./about.html">About us</a>
+      <a href="./Marian_Lockwood_Quiz.html">Lockwood Quiz</a>
+      <a href="./quiz.html">Space Quiz</a>
+    </div>
+  </div>
+</div>
+<!-- Heading video -->
+<div class = "fullscreen">
+  <div class = "video_overlay_text">
+    <p style = "color: white; font-size: 100px"> Historical Context </p>
+  </div>
+  <video loop muted autoplay poster="img/videoframe.jpg" class = "fullscreen_video">
+    <source src="supernova.mp4" type="video/mp4">
+  </video>
+</div>
+<!-- End Heading video -->
+
+<!-- This is the personal life timeline -->
+<section >
+  <div class="block" >
+    <p>
+      <i>“O women, stand here in the breach,--for here you may stand powerful, invincible, I had almost said omnipotent. Rise now to the heights of a sublime courage, --for the hour has need of you.” - Mary Abigail Dodge, 1863
+      </i>
+    </p>
+    <p> 
+      Marian Lockwood was born right before the turn of the century, a time that signalled growth and opportunity for women. This was around the time that women's colleges were on the rise and slowly becoming the new norm for women to attend. Born into this era of opportunity, Marian attended the all-women Wellesley College, and even though she was not able to graduate, this was where she first gained an interest in astronomy.
+    </p>
+  </div>
+</section>
+
+<style>
+.parallax2 {
+  background-image: url('staff_of_planetarium_lecturers.jpg');
+  height: 60%; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+</style>
+<div class="parallax2"> </div>
+
+<section >
+  <div class="block" >
+    <h2> Women in Science</h2>
+      <p>
+        The early 1930s was a time for many pioneering women and female representation in science as well as academia. The field of space exploration and astronomy in particular experienced great gains by women. This was the time for Annie Jump Cannon to see how temperatures distinguish stars in 1901, Henrietta Swan Leavitt to publish her study of variable stars -- which laid the foundation for Edwin Hubble's work and subsequent Nobel Prize -- and for Cecilia Payne-Haposchkin to demonstrate that stars were mostly made up of hydrogen and helium (which turned into a fundamental theory of astrophysics). 
+      </p>
+      <p>
+        Marian Lockwood grew up looking up to these women and their breakthroughs. She grew up in a time of great innovation and a wave of feminism, and indeed much of her work focused on spreading her passions and producing easily digestible material at the Hayden Planetarium. Yet for most of her career at the Hayden Planetarium, she was one of only two female staff, and eventually, the only one. The effects of this, coupled with the cultural attitude towards women at the time, was soon evident when she was replaced as acting curator by Commander Gordon A. Atwater, who immediately eliminated the roles of associate and assistant curatorial positions. This reduced Lockwood to the position of lecturer by 1946, pushing her to eventually leave the planetarium and never return to astronomical teaching. While women had opportunity to learn and innovate, they could only do so in an environment characterized by toxic masculinity and endless doubt about their ability due to their gender.
+      </p>
+      
+  </div> 
+</section> 
+
+<style>
+.parallax3 {
+  background-image: url('marian_lockwood_group.jpg');
+  height: 60%; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+</style>
+<div class="parallax3"> </div>
+
+<section>
+  <div class="block" >
+    <h2 class = "block"> Here's a video on women's rights in the 20th century if you want to learn more! </h2>
+    <p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/HGEMscZE5dY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</section>
+
+<style>
+.parallax4 {
+  background-image: url('equality.jpg');
+  height: 60%; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+</style>
+<div class="parallax4"> </div>
+
+<section>
+  <div class="block" >
+    <h2> Citations</h2>
+        <p> "Astronomers Find New Class of Starlike Objects." <i> Del Rio News Herald. </i> June 10, 1998. https://www.newspapers.com/clip/10247592/del_rio_news_herald/</p>
+        <p> American Association of Variable Star Observers. "Delta Cephi." Aavso. Last modified June 13, 2010. http://www.aavso.org/vsots_delcep </p>
+        <p> Santa Rosa Junior College. "Women in the 1930s & 1940s." Santarosa. Last modified 2017. https://canvas.santarosa.edu/courses/24761/pages/women-in-the-1930s-and-1940s </p>
+        <p> Marche, Jordan. <i>Theaters of Time and Space: American Planetaria. </i> New Jersey: Rutgers University Press, 2005. https://books.google.com/books?id=fA9YJxUKjMkC&dq=howes+american+women+vol+3+lockwood&source=gbs_navlinks_s </p>
+        <p> Green, John. “Women's Suffrage: Crash Course US History #31.” YouTube, YouTube, 26 Sept. 2013, www.youtube.com/watch?v=HGEMscZE5dY </p>
+        <p> Kornmesser, M. "Hubblecast 64: It all ends with a bang!" YouTube, Feb. 17 2016, youtu.be/3kNdK7nW0rY.</p>
+  </div>
+</section>
+<!-- End of early life timeline -->
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+</body>
+</html>
