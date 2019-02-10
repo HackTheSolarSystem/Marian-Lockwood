@@ -310,15 +310,43 @@ img {vertical-align: middle;}
 /* End of slideshown */
 
 
-/* Menu Bar */
+
+/* FIRST Menu Bar option (gray background) */
 .menu-bar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.menu-bar a {
+  float: left;
+  width: 20%;
+  text-align: center;
+  padding: 26px 0;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 26px;
+  text-decoration:none;
+}
+
+.menu-bar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #7E57C2
+}
+
+
+/* SECOND Menu Bar Option (no background color) */
+.menu-bar1 {
   width: 100%;
   overflow: auto;
   z-index: 9999;
   position:absolute;
 }
 
-.menu-bar a {
+.menu-bar1 a {
   float: left;
   width: 20%;
   text-align: center;
@@ -330,9 +358,6 @@ img {vertical-align: middle;}
   text-decoration:none;
 }
 
-.menu-bar a:hover {
+.menu-bar1 a:hover {
   background-color: #271154;
 }
-
-
-
