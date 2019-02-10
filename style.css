@@ -390,3 +390,29 @@ img {vertical-align: middle;}
 .menu-bar1 a:hover {
   background-color: #271154;
 }
+
+
+.Bio{
+  color: white;
+  font-size: 20px;
+  padding: 8px 12px;
+}
+.bio1{
+  color: white;
+  font-size: 50px;
+}
+#bioabout{
+  position: relative;
+  padding: 2em 0;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.aboutbio{
+  width: 90%;
+  max-width: 1080px;
+  margin: 0 auto;
+  background: #2B343A;
+  padding: 0 10%;
+  border-radius: 60px;
+}
+
