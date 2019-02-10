@@ -12,13 +12,21 @@
 
 
 <!-- Menu Bar -->
-	<div class="menu-bar">
-	  <a href="#" class = "active"> Home </a> 
-	  <a href="#"> <i class="fa fa-female" aria-hidden="true"></i> Personal Life </a> 
-	  <a href="#"> <i class="fa fa-trophy" aria-hidden="true"></i> Achievements</a> 
-	  <a href="#"> <i class="fa fa-align-left" aria-hidden="true"></i> Context </a>
-	  <a href="#">Legacy </a> 
-	</div>
+<div class="menu-bar">
+  <a href="./homepage.html" class = "active"> Home </a> 
+  <a href="./personal.html"> Personal Life </a> 
+  <a href="./work.html"> Achievements</a> 
+  <a href="context.html"> Context </a>
+  <a href="./newMain.html"> Legacy </a>
+  <div class="dropdown">
+    <a href="#" onclick="myFunction()" class="dropbtn"> More </a> 
+    <div id="myDropdown" class="dropdown-content">
+      <a href="./about.html">About us</a>
+      <a href="./Marian_Lockwood_Quiz.html">Lockwood Quiz</a>
+      <a href="./quiz.html">Space Quiz</a>
+    </div>
+  </div>
+</div>
 	<!-- end Menu Bar -->
 
 	<!-- Heading video -->
@@ -207,5 +215,26 @@
 	}
 	</script>
 	<!-- End Javascript for slideshow -->
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
 </body>
 </html>
