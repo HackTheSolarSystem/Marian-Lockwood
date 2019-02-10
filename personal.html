@@ -1,7 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="style.css" type = "text/css">
+<link rel = "stylesheet" href = "style.css" type = "text/css">
+
+<style>
+  
+/* Paralex scrolling */
+.parallex {
+  background-image: url('lockwood_using_equipment.jpg');
+  height: 90%; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+/* end Paralex scrolling */
+</style>
 
 <title> Personal Life </title>
 </head>
@@ -15,7 +29,15 @@
   <a href="#"> Personal Life </a> 
   <a href="#"> Achievements</a> 
   <a href="#"> Context </a>
-  <a href="#"> Legacy </a> 
+  <a href="#"> Legacy </a>
+  <div class="dropdown">
+    <a href="#" onclick="myFunction()" class="dropbtn"> More </a> 
+    <div id="myDropdown" class="dropdown-content">
+      <a href="#about">About us</a>
+      <a href="#about">Lockwood Quiz</a>
+      <a href="#contact">Space Quiz</a>
+    </div>
+  </div>
 </div>
 <!-- end Menu Bar -->
 
@@ -49,7 +71,7 @@
         <div class="timeline-content-info">
         December 29, 1899
         </div>
-        <p> Marian Lockwood was born on Dec 29 1899 in an unknown location.</p>
+        <p> Marian Lockwood was born on Dec 29 1899 in Rye NY.</p>
       </div> 
     </div> 
 
@@ -69,9 +91,9 @@
       </div> 
 
       <div class="cd-timeline-content">
-        <h2>Schooling</h2>
-        Date
-        <p>Some Information.</p>
+        <h2>Passed Away</h2>
+        1 Dec 1973
+        <p>Marian Lockwood passed away on Dec 1 1973 in an unknown location.</p>
       </div> 
     </div>
   </section> 
@@ -127,14 +149,20 @@
 <!-- End slideshow HTML -->
 
 
-<!-- Footer video and form -->
-<div class = "fullscreen">
-  <div class = "video_overlay_text"> </div>
-  <video loop muted autoplay poster="img/videoframe.jpg" class = "fullscreen_video">
-    <source src="Background_08.mp4" type="video/mp4">
-  </video>
+<!-- citing -->
+<div style = "padding: 35px; background-color: white; text-align: left">
+  <ul>
+    <li> American Museum of Natural History. Lockwood Staff Data Sheet. 1965, p.1 </li>
+    <li> Image no. 315009 AMNH Library</li>
+    <li> Image no. 284439 AMNH Library</li>
+    <li> Image no. 284440 AMNH Library</li>
+    <li> Image no. 292818 AMNH Library</li>
+    <li> Image no. 297493 AMNH Library</li>
+    <li> Image no. 315064 AMNH Library</li>
+    <li> Family Tree Now. "Marian Lockwood." Version. Family Tree Now. https://www.familytreenow.com/search/death/results?first=Marian&last=Lockwood&rid=0sn&smck=gbAKcgd5_Qwd3YnPLy_KMg </li>
+
 </div>
-<!-- End of Footer video and form -->
+<!-- citing -->
 
 
 <!-- Beginning Javascript for slideshow -->
@@ -169,7 +197,28 @@ function showSlides(n) {
 </script>
 <!-- End Javascript for slideshow -->
 
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
 </body>
 </html>
-
 
