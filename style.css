@@ -180,6 +180,27 @@ html, body {
 }
 /* End of timeline*/
 
+/* Block Text */
+.block {
+  margin: auto;
+  width: 70%;
+  position: relative;
+  padding: 2em;
+}
+
+.block p {
+  line-height: 1.5;
+  font-family:'Roboto', sans-serif;
+  color:white;
+}
+
+.block h2 {
+  text-align: center;
+  line-height: 1.5;
+  font-family:'Roboto', sans-serif;
+  color:white;
+}
+/* End of Block Text */
 
 /* Slideshow */
 * {box-sizing: border-box}
@@ -288,11 +309,13 @@ img {vertical-align: middle;}
 }
 /* End of slideshown */
 
+
 /* Menu Bar */
 .menu-bar {
   width: 100%;
-  background-color: #555;
   overflow: auto;
+  z-index: 9999;
+  position:absolute;
 }
 
 .menu-bar a {
@@ -301,16 +324,15 @@ img {vertical-align: middle;}
   text-align: center;
   padding: 26px 0;
   transition: all 0.3s ease;
+  font-size: 1.5em;
   color: white;
-  font-size: 26px;
+  font-family:'Roboto', sans-serif;
+  text-decoration:none;
 }
 
 .menu-bar a:hover {
-  background-color: #000;
+  background-color: #271154;
 }
 
-.active {
-  background-color: #7E57C2
-}
 
 
