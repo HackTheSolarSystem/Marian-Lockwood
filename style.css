@@ -1,14 +1,8 @@
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:300,600);
 
-/* Paralex scrolling */
-.parallex {
-  background-image: url('lockwood_using_equipment.jpg');
-  height: 90%; 
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; 
+* {
+    font-family: 'Work Sans', sans-serif;
 }
-/* end Paralex scrolling */
 
 /* Beginning of heading video */
 .fullscreen {
