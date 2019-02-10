@@ -1,201 +1,426 @@
 <!DOCTYPE html>
 <html>
-<head>
-<link rel = "stylesheet" href = "style.css" type = "text/css">
-
 <style>
-  
-/* Paralex scrolling */
-.parallex {
-  background-image: url('lockwood_using_equipment.jpg');
-  height: 90%; 
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; 
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:300,600);
+
+body{
+  font-size: 26px;
+  font-family: 'Work Sans', sans-serif;
+  color: #333;
+  font-weight: 300;
+  text-align: center;
+  background-color: #f8f6f0;
 }
-/* end Paralex scrolling */
+h1{
+  font-weight: 300;
+  margin: 0px;
+  padding: 10px;
+  font-size: 35px;
+  background-color: #444;
+  color: #fff;
+}
+.question{
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.answers {
+  margin-bottom: 20px;
+  text-align: left;
+  display: inline-block;
+}
+.answers label{
+  display: block;
+  margin-bottom: 10px;
+  transform: ease;
+}
+button{
+  font-family: 'Work Sans', sans-serif;
+    font-size: 22px;
+    background-color: #7E57C2;
+    color: #fff;
+    border: 0px;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    margin-top: 150px
+}
+button:hover{
+    background-color: #38a;
+}
+
+.slide{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.active-slide{
+  opacity: 1;
+  z-index: 2;
+}
+.quiz-container{
+  position: relative;
+  height: 200px;
+  margin-top: 40px;
+}
+
+
+/* Beginning of heading video */
+.fullscreen {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.fullscreen_video {
+    min-width: 100%;
+    overflow: hidden;
+    z-index: -1;
+    height: 1000px;
+}
+
+.video_overlay_text {
+    position: absolute;
+    z-index: 9999;
+    color: white;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.dropbtn {
+  background-color: #555;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, {
+  background-color: #2980B9;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  background-color: #555;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+.show {display: block;}
+
+/* Menu Bar */
+.menu-bar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.menu-bar a {
+  float: left;
+  width: 16.6%;
+  text-align: center;
+  padding: 26px 0;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 26px;
+  text-decoration:none;
+}
+
+.menu-bar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #7E57C2
+}
 </style>
 
-<title> Personal Life </title>
-</head>
-
-<body style = "text-align: center;">
-
+<body>
 
 <!-- Menu Bar -->
 <div class="menu-bar">
-  <a href="#" class = "active"> Home </a> 
-  <a href="#"> Personal Life </a> 
-  <a href="#"> Achievements</a> 
-  <a href="#"> Context </a>
-  <a href="#"> Legacy </a>
+  <a href="#./homepage.html"> Home </a> 
+  <a href="#./personal.html"> Personal Life </a> 
+  <a href="#./work.html"> Achievements</a> 
+  <a href="#./context.html"> Context </a>
+  <a href="#./Marian-Lockwood"> Legacy </a>
   <div class="dropdown">
-    <a href="#" onclick="myFunction()" class="dropbtn"> More </a> 
+    <a href="#" onclick="myFunction()" class="dropbtn active"> More </a> 
     <div id="myDropdown" class="dropdown-content">
-      <a href="#about">About us</a>
-      <a href="#about">Lockwood Quiz</a>
-      <a href="#contact">Space Quiz</a>
+      <a href="#./about.html">About us</a>
+      <a href="#./Marian_Lockwood_Quiz.html">Lockwood Quiz</a>
+      <a href="#./quiz.html" class = "active" >Space Quiz</a>
     </div>
   </div>
 </div>
 <!-- end Menu Bar -->
 
-<!-- Heading video -->
+
 <div class = "fullscreen">
   <div class = "video_overlay_text">
-    <p style = "color: white; font-size: 100px"> Personal Life </p>
-  </div>
+    <h1>Quiz on Space Facts</h1>
+    <div class="quiz-container">
+      <div id="quiz"></div>
+    </div>
+    <button id="previous">Previous Question</button>
+    <button id="next">Next Question</button>
+    <button id="submit">Submit Quiz</button>
+    <div id="results"></div></div>
   <video loop muted autoplay poster="img/videoframe.jpg" class = "fullscreen_video">
-    <source src="Background_08.mp4" type="video/mp4">
+    <source src="Space-2381.mp4" type="video/mp4">
   </video>
 </div>
-<!-- End Heading video -->
-
-<!-- Parallex -->
-<div class="parallex"> </div>
 
 
-<!-- This is the personal life timeline -->
-<div style = "height: 100px; font-size: 26px; color: white"> 
-  <h1 class = "center"> <a name = "early_life" > Early Life </a> </h1>
-</div>  
-
-<section id="cd-timeline" class="cd-container">
-    <div class="cd-timeline-block">
-      <div class="cd-timeline-img cd-picture">
-      </div>
-
-      <div class="cd-timeline-content">
-        <h2 id = "early_life">Birth</h2>
-        <div class="timeline-content-info">
-        December 29, 1899
-        </div>
-        <p> Marian Lockwood was born on Dec 29 1899 in Rye NY.</p>
-      </div> 
-    </div> 
-
-    <div class="cd-timeline-block">
-      <div class="cd-timeline-img cd-movie">
-      </div> 
-
-      <div class="cd-timeline-content">
-        <h2> Education </h2>
-        Date
-        <p> She attended Wellesley College, and though she never graduated, it was where she became interested in astronomy.</p>
-      </div> 
-    </div> 
-
-    <div class="cd-timeline-block">
-      <div class="cd-timeline-img cd-picture">
-      </div> 
-
-      <div class="cd-timeline-content">
-        <h2>Passed Away</h2>
-        1 Dec 1973
-        <p>Marian Lockwood passed away on Dec 1 1973 in an unknown location.</p>
-      </div> 
-    </div>
-  </section> 
-<!-- End of early life timeline -->
-
-
-<!-- Slideshow HTML -->
-<div class="slideshow-container">
-
-<div class="mySlides fade">
-  <div class="numbertext">1 / 5</div>
-  <img src="staff_of_hayden_planetarium.jpg" style="width:100%">
-  <div class="text">Staff of the Hayden Planetarium, front row, left to right: Marian Lockwood, Dr. Clyde Fisher, William H. Barton, Dorothy A. Bennet; rear row: Charles Federer and Arthur Draper, September, 1936</div>
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext">2 / 5</div>
-  <img src="marian_lockwood_group.jpg" style="width:100%">
-  <div class="text">Assistant Curator Marian Lockwood with group of children in the Copernican Planetarium, Hayden Planetarium, 1940</div>
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext">3 / 5</div>
-  <img src="staff_of_planetarium.jpg" style="width:100%">
-  <div class="text">Staff of Planetarium lecturers, left to right: Clyde Fisher, Dorothy A. Bennett, Arthur L. Draper, Marion Lockwood, and William H. Barton, Jr., October 1, 1935</div>
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext">4 / 5</div>
-  <img src="staff_of_planetarium_lecturers.jpg" style="width:100%">
-  <div class="text">Staff of Planetarium lecturers, left to right: Clyde Fisher, Dorothy A. Bennett, William H. Barton, Jr., Marion Lockwood, and Arthur L. Draper, October 1, 1935</div>
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext">5 / 5</div>
-  <img src="lockwood_using_equipment.jpg" style="width:100%">
-  <div class="text">Astronomer Marian Lockwood at the control panel, Hayden Planetarium, July 1943</div>
-</div>
-
-<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-<a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-</div>
-<br>
-
-<div style="text-align:center; color: #1234">
-  <span class="dot" onclick="currentSlide(1)"></span> 
-  <span class="dot" onclick="currentSlide(2)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span> 
-  <span class="dot" onclick="currentSlide(4)"></span> 
-  <span class="dot" onclick="currentSlide(5)"></span> 
-</div>
-<!-- End slideshow HTML -->
-
-
-<!-- citing -->
-<div style = "padding: 35px; background-color: white; text-align: left">
-  <ul>
-    <li> American Museum of Natural History. Lockwood Staff Data Sheet. 1965, p.1 </li>
-    <li> Image no. 315009 AMNH Library</li>
-    <li> Image no. 284439 AMNH Library</li>
-    <li> Image no. 284440 AMNH Library</li>
-    <li> Image no. 292818 AMNH Library</li>
-    <li> Image no. 297493 AMNH Library</li>
-    <li> Image no. 315064 AMNH Library</li>
-    <li> Family Tree Now. "Marian Lockwood." Version. Family Tree Now. https://www.familytreenow.com/search/death/results?first=Marian&last=Lockwood&rid=0sn&smck=gbAKcgd5_Qwd3YnPLy_KMg </li>
-
-</div>
-<!-- citing -->
-
-
-<!-- Beginning Javascript for slideshow -->
 <script>
+(function() {
+  const myQuestions = [
+    {
+      question: "How many degrees celsius can the core of a star reach?",
+      answers: {
+        a: "1,200",
+        b: "12,000",
+        c: "120,000",
+        d: "1,200,000"
+      },
+      correctAnswer: "d"
+    },
+    {
+      question: "How old is the universe in billions of years?",
+      answers: {
+        a: "14.6",
+        b: "13.8",
+        c: "11.7",
+        d: "10.5"
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "How many planets are in the solar system?",
+      answers: {
+        a: "10",
+        b: "9",
+        c: "8",
+        d: "7"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "What percent of the universe is dark matter?",
+      answers: {
+        a: "20%",
+        b: "24%",
+        c: "27%",
+        d: "30%"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "What are the most common type of stars in the solar system?",
+      answers: {
+        a: "Red Dwarfs",
+        b: "Blue Giants",
+        c: "Yellow Dwarfs",
+        d: "Neutron Stars"
+      },
+      correctAnswer: "a"
+    },
+    {
+      question: "What is the next closest star to Earth besides the sun?",
+      answers: {
+        a: "Alula Australis",
+        b: "Proxima Centauri",
+        c: "Polaris Australis",
+        d: "Nusakan"
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "What is the longest continuous time a human has spent in space??",
+      answers: {
+        a: "437 days",
+        b: "238 days",
+        c: "563 days",
+        d: "369 days"
+      },
+      correctAnswer: "a"
+    },
+    {
+      question: "How much time does sun rays take to reach earth?",
+      answers: {
+        a: "8 minutes",
+        b: "10 minutes",
+        c: "15 minutes",
+        d: "17 minutes"
+      },
+      correctAnswer: "a"
+    },
+    {
+      question: "How old is the Earth in billions of years?",
+      answers: {
+        a: "2.3",
+        b: "3.2",
+        c: "4.5",
+        d: "5.9"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "Which is the largest planet in the solar system?",
+      answers: {
+        a: "Jupiter",
+        b: "Earth",
+        c: "Mars",
+        d: "Saturn"
+      },
+      correctAnswer: "a"
+    }
+  ];
 
-var slideIndex = 1;
-showSlides(slideIndex);
+  function buildQuiz() {
+    // we'll need a place to store the HTML output
+    const output = [];
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+    // for each question...
+    myQuestions.forEach((currentQuestion, questionNumber) => {
+      // we'll want to store the list of answer choices
+      const answers = [];
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+      // and for each available answer...
+      for (letter in currentQuestion.answers) {
+        // ...add an HTML radio button
+        answers.push(
+          `<label>
+             <input type="radio" name="question${questionNumber}" value="${letter}">
+              ${letter} :
+              ${currentQuestion.answers[letter]}
+           </label>`
+        );
+      }
 
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
+      // add this question and its answers to the output
+      output.push(
+        `<div class = "radio-toolbar">
+          <div class="slide">
+             <div class="question"> ${currentQuestion.question} </div>
+             <div class="answers"> ${answers.join("")} </div>
+          </div>
+         </div>`
+      );
+    });
+
+    // finally combine our output list into one string of HTML and put it on the page
+    quizContainer.innerHTML = output.join("");
   }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
+
+  function showResults() {
+    // gather answer containers from our quiz
+    const answerContainers = quizContainer.querySelectorAll(".answers");
+
+    // keep track of user's answers
+    let numCorrect = 0;
+
+    // for each question...
+    myQuestions.forEach((currentQuestion, questionNumber) => {
+      // find selected answer
+      const answerContainer = answerContainers[questionNumber];
+      const selector = `input[name=question${questionNumber}]:checked`;
+      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+      // if answer is correct
+      if (userAnswer === currentQuestion.correctAnswer) {
+        // add to the number of correct answers
+        numCorrect++;
+
+        // color the answers green
+        answerContainers[questionNumber].style.color = "lightgreen";
+      } else {
+        // if answer is wrong or blank
+        // color the answers red
+        answerContainers[questionNumber].style.color = "red";
+      }
+    });
+
+    // show number of correct answers out of total
+    if (numCorrect <= 4) {
+      resultsContainer.innerHTML = `<h1> ${numCorrect} out of ${myQuestions.length} <br>You need some more practice until you are a master at space.<h1>`;
+    } else if (numCorrect <= 7) {
+      resultsContainer.innerHTML = `<h1> ${numCorrect} out of ${myQuestions.length} <br>You need some more practice until you are a master at space.<h1>`;
+    } else if (numCorrect <= 9) {
+      resultsContainer.innerHTML = `<h1> ${numCorrect} out of ${myQuestions.length} <br>You are so close to being a space master! Keep trying.<h1>`;
+    } else {
+      resultsContainer.innerHTML = `<h1> ${numCorrect} out of ${myQuestions.length} <br>Congratulations! You are the master of all things space!<h1>`;
+    }
   }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-}
+
+  function showSlide(n) {
+    slides[currentSlide].classList.remove("active-slide");
+    slides[n].classList.add("active-slide");
+    currentSlide = n;
+    
+    if (currentSlide === 0) {
+      previousButton.style.display = "none";
+    } else {
+      previousButton.style.display = "inline-block";
+    }
+    
+    if (currentSlide === slides.length - 1) {
+      nextButton.style.display = "none";
+      submitButton.style.display = "inline-block";
+    } else {
+      nextButton.style.display = "inline-block";
+      submitButton.style.display = "none";
+    }
+  }
+
+  function showNextSlide() {
+    showSlide(currentSlide + 1);
+  }
+
+  function showPreviousSlide() {
+    showSlide(currentSlide - 1);
+  }
+
+  const quizContainer = document.getElementById("quiz");
+  const resultsContainer = document.getElementById("results");
+  const submitButton = document.getElementById("submit");
+
+  // display quiz right away
+  buildQuiz();
+
+  const previousButton = document.getElementById("previous");
+  const nextButton = document.getElementById("next");
+  const slides = document.querySelectorAll(".slide");
+  let currentSlide = 0;
+
+  showSlide(0);
+
+  // on submit, show results
+  submitButton.addEventListener("click", showResults);
+  previousButton.addEventListener("click", showPreviousSlide);
+  nextButton.addEventListener("click", showNextSlide);
+})();
 </script>
-<!-- End Javascript for slideshow -->
 
 <script>
 /* When the user clicks on the button, 
@@ -219,6 +444,6 @@ window.onclick = function(event) {
 }
 </script>
 
+
 </body>
 </html>
-
