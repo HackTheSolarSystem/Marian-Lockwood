@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="style.css"  type="text/css">
+<title> Legacy</title>
+<style>
+.parallex {
+  background-image: url('plan.jpg');
+  height: 90%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+</style>
+</head>
+<body >
+
+
+
+  <!-- Menu Bar -->
+  <div class="menu-bar">
+    <a href="#" class = "active"> Home </a>
+    <a href="#"> Personal Life </a>
+    <a href="#"> Achievements</a>
+    <a href="#"> Context </a>
+    <a href="#"> Legacy </a>
+    <div class="dropdown">
+      <a href="#" onclick="myFunction()" class="dropbtn"> More </a>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="#about">About us</a>
+        <a href="#about">Lockwood Quiz</a>
+        <a href="#contact">Space Quiz</a>
+      </div>
+    </div>
+  </div>
+
+<div class = "fullscreen">
+  <div class = "video_overlay_text">
+    <p style = "color: white; font-size: 100px"> Legacy </p>
+  </div>
+  <video loop muted autoplay poster="img/videoframe.jpg" class = "fullscreen_video">
+    <source src="Background_08.mp4" type="video/mp4">
+  </video>
+</div>
+<div class = "parallex"> </div>
+
+<br>
+</br>
+<!-- This is the personal life timeline -->
+<div style = "height: 100px; font-size: 10px; color: gray">
+  <h1 class = "center"> <a name = "paragraphone" > In 1935, the Hayden planetarium employed more women than any of the other three planetariums across the country. The department of the Hayden planetarium was committed, at the time, to an equal employment policy, at least regarding those workers being trained to curate the Hayden planetarium. </a> </h1>
+</div>
+
+<br>
+</br>
+
+
+
+<br>
+</br>
+<!-- This is the personal life timeline -->
+<div style = "height: 100px; font-size: 10px; color: gray">
+  <h1 class = "center"> <a name = "paragraphtwo" > After the end of World War II however, men returned home expecting their old jobs–– now taken over by women–– to be waiting for them. The commitment to equal employment of years prior ended. All assistant curatorial and curatorial positions were cut, Marian Lockwood was relegated to a lecturer position. </a> </h1>
+</div>
+<br>
+</br>
+<img src= 'zeiss.png' style= "width: 100%">
+<br>
+
+</br>
+<div style = "height: 100px; font-size: 10px; color: gray">
+  <h1 class = "center"> <a name = "paragraphthree" > Marian Lockwood turned in her resignation letter in 1946. Before leaving, she hired Catherine E. Barry, who stayed at AMNH through the the directorships of both Gordon A. Atwater (1945-51) and Robert Coles (1951-53), and attained a position as co-chair of the Planetarium after Coles left.</a> </h1>
+</div>
+
+ <br>
+</br>
+<div style = "height: 100px; font-size: 10px; color: gray">
+  <h1 class = "center"> <a name = "paragraphfour" > Since Marian Lockwood left her job in the Hayden Planetarium, much has changed. The old zeiss projector that used copper foil slides with tiny holes punched in them to let light through to create star projections, has been replaced by a 10-bit color video projector. </a> </h1>
+</div>
+
+
+ <br>
+</br>
+<div style = "height: 100px; font-size: 10px; color: gray">
+  <h1 class = "center"> <a name = "paragraphfive" > 20% of bachelor’s degrees in physics were awarded to women in 2016, up from just 8% in 1976, and about 18% of all PHDs in physics going to women in 2016, up from just over 4% in 1976. 25% of physics professors in PHD-granting departments are women. </a> </h1>
+</div>
+<br>
+</br>
+
+<div style = "height: 100px; font-size: 10px; color: gray">
+  <h1 class = "center"> <a name = "paragraphsix" > Marian Lockwood helped set a precedent for women teaching astronomy by giving public lectures at the Museum nearly 90 years ago. The Amateur Astronomer’s Association still exists, and holds monthly lectures at AMNH. </a> </h1>
+</div>
+
+<br>
+</br
+
+<footer>
+<p>
+  AMNH "Back In Black: Upgraded Projector Enriches Dome Experience" AMNH, June 23, 2011 https://www.amnh.org/explore/news-blogs/news-posts/back-in-black-upgraded-projector-enriches-dome-experience
+</p>
+<p>
+  AMNH "Retro Fan Art from the Original Hayden Planetarium" AMNH, October 11, 2013 https://www.amnh.org/explore/news-blogs/news-posts/retro-fan-art-from-the-original-hayden-planetarium
+</p>
+</footer>
+
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
