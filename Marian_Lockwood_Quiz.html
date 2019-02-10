@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<style>
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:300,600);
+
+body{
+  font-size: 26px;
+  font-family: 'Work Sans', sans-serif;
+  color: #333;
+  font-weight: 300;
+  text-align: center;
+  background-color: #f8f6f0;
+}
+h1{
+  font-weight: 300;
+  margin: 0px;
+  padding: 10px;
+  font-size: 35px;
+  background-color: #444;
+  color: #fff;
+}
+.question{
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.answers {
+  margin-bottom: 20px;
+  text-align: left;
+  display: inline-block;
+}
+.answers label{
+  display: block;
+  margin-bottom: 10px;
+  transform: ease;
+}
+button{
+  font-family: 'Work Sans', sans-serif;
+    font-size: 22px;
+    background-color: #7E57C2;
+    color: #fff;
+    border: 0px;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    margin-top: 150px
+}
+button:hover{
+    background-color: #38a;
+}
+
+.slide{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.active-slide{
+  opacity: 1;
+  z-index: 2;
+}
+.quiz-container{
+  position: relative;
+  height: 200px;
+  margin-top: 40px;
+}
+
+
+/* Beginning of heading video */
+.fullscreen {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.fullscreen_video {
+    min-width: 100%;
+    overflow: hidden;
+    z-index: -1;
+    height: 1000px;
+}
+
+.video_overlay_text {
+    position: absolute;
+    z-index: 9999;
+    color: white;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+/* Menu Bar */
+.menu-bar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.menu-bar a {
+  float: left;
+  width: 16.6%;
+  text-align: center;
+  padding: 26px 0;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 26px;
+  text-decoration:none;
+}
+
+.menu-bar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #7E57C2
+}
+
+.dropbtn {
+  background-color: #555;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, {
+  background-color: #2980B9;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  background-color: #555;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+.show {display: block;}
+</style>
+
+<body>
+
+<div class="menu-bar">
+  <a href="#" class = "active"> Home </a> 
+  <a href="#"> Personal Life </a> 
+  <a href="#"> Achievements</a> 
+  <a href="#"> Context </a>
+  <a href="#"> Legacy </a>
+  <div class="dropdown">
+    <a href="#" onclick="myFunction()" class="dropbtn"> More </a> 
+    <div id="myDropdown" class="dropdown-content">
+      <a href="#about">About us</a>
+      <a href="#about">Lockwood Quiz</a>
+      <a href="#contact">Space Quiz</a>
+    </div>
+  </div>
+</div>
+
+
+<div class = "fullscreen">
+  <div class = "video_overlay_text">
+    <h1>Quiz on Marian Lockwood</h1>
+    <div class="quiz-container">
+      <div id="quiz"></div>
+    </div>
+    <button id="previous">Previous Question</button>
+    <button id="next">Next Question</button>
+    <button id="submit">Submit Quiz</button>
+    <div id="results"></div></div>
+  <video loop muted autoplay poster="img/videoframe.jpg" class = "fullscreen_video">
+    <source src="Space-2381.mp4" type="video/mp4">
+  </video>
+</div>
+
+
+<script>
+(function() {
+  const myQuestions = [
+    {
+      question: "When was Marian Lockwood appointed assistant curator of astronomy and hayden planetarium?",
+      answers: {
+        a: "January 30 1939",
+        b: "August 8 1920",
+        c: "October 1, 1935",
+        d: "Dec 19 1940"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "Who is she often compared to?",
+      answers: {
+        a: "Ruth Angus",
+        b: "Maude Bennot",
+        c: "Dorothy Bennet",
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "Which college did she attend?",
+      answers: {
+        a: "Wellesley College",
+        b: "Rosemont College",
+        c: "Lesley College",
+        d: "Barnard College"
+      },
+      correctAnswer: "a"
+    },
+    {
+      question: "Which books did she author?",
+      answers: {
+        a: "The Earth Among the Stars",
+        b: "The Story of Astronomy",
+        c: "Astronomy",
+        d: "All of the above"
+      },
+      correctAnswer: "d"
+    },
+    {
+      question: "What year did Marian Lockwood assume the role of Acting Curator?",
+      answers: {
+        a: "1944",
+        b: "1948",
+        c: "1950",
+        d: "1940"
+      },
+      correctAnswer: "a"
+    }
+  ];
+
+  function buildQuiz() {
+    // we'll need a place to store the HTML output
+    const output = [];
+
+    // for each question...
+    myQuestions.forEach((currentQuestion, questionNumber) => {
+      // we'll want to store the list of answer choices
+      const answers = [];
+
+      // and for each available answer...
+      for (letter in currentQuestion.answers) {
+        // ...add an HTML radio button
+        answers.push(
+          `<label>
+             <input type="radio" name="question${questionNumber}" value="${letter}">
+              ${letter} :
+              ${currentQuestion.answers[letter]}
+           </label>`
+        );
+      }
+
+      // add this question and its answers to the output
+      output.push(
+        `<div class = "radio-toolbar">
+          <div class="slide">
+             <div class="question"> ${currentQuestion.question} </div>
+             <div class="answers"> ${answers.join("")} </div>
+          </div>
+         </div>`
+      );
+    });
+
+    // finally combine our output list into one string of HTML and put it on the page
+    quizContainer.innerHTML = output.join("");
+  }
+
+  function showResults() {
+    // gather answer containers from our quiz
+    const answerContainers = quizContainer.querySelectorAll(".answers");
+
+    // keep track of user's answers
+    let numCorrect = 0;
+
+    // for each question...
+    myQuestions.forEach((currentQuestion, questionNumber) => {
+      // find selected answer
+      const answerContainer = answerContainers[questionNumber];
+      const selector = `input[name=question${questionNumber}]:checked`;
+      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+      // if answer is correct
+      if (userAnswer === currentQuestion.correctAnswer) {
+        // add to the number of correct answers
+        numCorrect++;
+
+        // color the answers green
+        answerContainers[questionNumber].style.color = "lightgreen";
+      } else {
+        // if answer is wrong or blank
+        // color the answers red
+        answerContainers[questionNumber].style.color = "red";
+      }
+    });
+
+    // show number of correct answers out of total
+    if (numCorrect <= 4) {
+      resultsContainer.innerHTML = `<h1> ${numCorrect} out of ${myQuestions.length} <br>You need some more practice until you are a master at space.<h1>`;
+    } else if (numCorrect <= 7) {
+      resultsContainer.innerHTML = `<h1> ${numCorrect} out of ${myQuestions.length} <br>You need some more practice until you are a master at space.<h1>`;
+    } else if (numCorrect <= 9) {
+      resultsContainer.innerHTML = `<h1> ${numCorrect} out of ${myQuestions.length} <br>You are so close to being a space master! Keep trying.<h1>`;
+    } else {
+      resultsContainer.innerHTML = `<h1> ${numCorrect} out of ${myQuestions.length} <br>Congratulations! You are the master of all things space!<h1>`;
+    }
+  }
+
+  function showSlide(n) {
+    slides[currentSlide].classList.remove("active-slide");
+    slides[n].classList.add("active-slide");
+    currentSlide = n;
+    
+    if (currentSlide === 0) {
+      previousButton.style.display = "none";
+    } else {
+      previousButton.style.display = "inline-block";
+    }
+    
+    if (currentSlide === slides.length - 1) {
+      nextButton.style.display = "none";
+      submitButton.style.display = "inline-block";
+    } else {
+      nextButton.style.display = "inline-block";
+      submitButton.style.display = "none";
+    }
+  }
+
+  function showNextSlide() {
+    showSlide(currentSlide + 1);
+  }
+
+  function showPreviousSlide() {
+    showSlide(currentSlide - 1);
+  }
+
+  const quizContainer = document.getElementById("quiz");
+  const resultsContainer = document.getElementById("results");
+  const submitButton = document.getElementById("submit");
+
+  // display quiz right away
+  buildQuiz();
+
+  const previousButton = document.getElementById("previous");
+  const nextButton = document.getElementById("next");
+  const slides = document.querySelectorAll(".slide");
+  let currentSlide = 0;
+
+  showSlide(0);
+
+  // on submit, show results
+  submitButton.addEventListener("click", showResults);
+  previousButton.addEventListener("click", showPreviousSlide);
+  nextButton.addEventListener("click", showNextSlide);
+})();
+</script>
+
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+
+</body>
+</html>
