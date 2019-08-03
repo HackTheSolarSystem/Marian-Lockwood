@@ -363,13 +363,13 @@ button:hover{
 
     // show number of correct answers out of total
     if (numCorrect <= 4) {
-      resultsContainer.innerHTML = `<h1> ${numCorrect} out of ${myQuestions.length} <br>You need some more practice until you are a master at space.<h1>`;
-    } else if (numCorrect <= 7) {
-      resultsContainer.innerHTML = `<h1> ${numCorrect} out of ${myQuestions.length} <br>You need some more practice until you are a master at space.<h1>`;
+      resultsContainer.innerHTML = `<h1> ${numCorrect} out of ${myQuestions.length} <br>Don't quit your day job.<h1>`;
+    } else if (numCorrect <= 6) {
+      resultsContainer.innerHTML = `<h1> ${numCorrect} out of ${myQuestions.length} <br>Perhaps space is not your strength.<h1>`;
     } else if (numCorrect <= 9) {
-      resultsContainer.innerHTML = `<h1> ${numCorrect} out of ${myQuestions.length} <br>You are so close to being a space master! Keep trying.<h1>`;
+      resultsContainer.innerHTML = `<h1> ${numCorrect} out of ${myQuestions.length} <br>The force is strong with you!<h1>`;
     } else {
-      resultsContainer.innerHTML = `<h1> ${numCorrect} out of ${myQuestions.length} <br>Congratulations! You are the master of all things space!<h1>`;
+      resultsContainer.innerHTML = `<h1> ${numCorrect} out of ${myQuestions.length} <br>Congratulations! You are the Master of the Universe!<h1>`;
     }
   }
 
